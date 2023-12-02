@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    Contribute to {{ mchango.mchango_name }}
+{% endblock %}
+
+{% block content %}
+    <h1>Contribute to {{ mchango.mchango_name }}</h1>
+    <p>Beneficiary: {{ mchango.beneficiary_name }}</p>
+    <p>Start Date: {{ mchango.start_date }}</p>
+    <p>End Date: {{ mchango.end_date }}</p>
+    <form method="POST" action="{% url 'contribute' unique_link=mchango.unique_link %}">
+    {% csrf_token %}
+        <label for="contributor_name">Your Name:</label>
+        <input type="text" id="contributor_name" name="contributor_name" required><br><br>
+        <label for="phone_number">Your Safaricom Phone Number:</label>
+        <input type="text" id="phone_number" name="phone_number" required><br><br>
+        <label for="contribution_amount">Contribution Amount:</label>
+        <input type="number" id="contribution_amount" name="contribution_amount" required><br><br>
+        <input type="submit" value="Contribute">
+    </form>
+{% endblock %}

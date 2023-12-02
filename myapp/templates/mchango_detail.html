@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mchango Details</title>
+    <!-- Add any necessary CSS or styles -->
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <h1>Mchango Details</h1>
+    <p>Unique Link: {{ unique_link }}</p>
+    <!-- Display other details of the Mchango object -->
+    <!-- Example: -->
+    <p>Mchango Name: {{ mchango.mchango_name }}</p>
+    <p>Beneficiary's Name: {{ mchango.beneficiary_name }}</p>
+    <!-- Add other details as needed -->
+
+    <!-- Provide links or buttons for further actions -->
+
+    <!-- Add any necessary JavaScript or scripts -->
+</body>
+</html>

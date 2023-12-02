@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    Create Mchango
+{% endblock %}
+
+{% block content %}
+    <h1>Create Mchango</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="mchango_name">Mchango Name:</label>
+        <input type="text" id="mchango_name" name="mchango_name" required><br><br>
+
+        <label for="beneficiary_name">Beneficiary's Name:</label>
+        <input type="text" id="beneficiary_name" name="beneficiary_name" required><br><br>
+
+        <label for="phone_number">Phone Number:</label>
+        <input type="text" id="phone_number" name="phone_number" required><br><br>
+
+        <label for="start_date">Start Date:</label>
+        <input type="date" id="start_date" name="start_date" required><br><br>
+
+        <label for="end_date">End Date:</label>
+        <input type="date" id="end_date" name="end_date" required><br><br>
+
+        <input type="submit" value="Create Mchango">
+    </form>
+{% endblock %}
